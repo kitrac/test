@@ -18,7 +18,7 @@ exports.current = async function (req, res) {
         city = await getCity();
     }
 
-    let uri = encodeURI('/data/2.5/weather?q=' + city + '&appid=' + API_KEY);
+    let uri = encodeURI('/data/2.5/weather?units=metric&q=' + city + '&appid=' + API_KEY);
     options = {
         hostname: BASE_URL_API,
         path: uri,
@@ -44,7 +44,7 @@ exports.forecast = async function (req, res) {
         city = await getCity();
     }
 
-    let uri = encodeURI('/data/2.5/forecast?q=' + city + '&appid=' + API_KEY);
+    let uri = encodeURI('/data/2.5/forecast?units=metric&q=' + city + '&appid=' + API_KEY);
     options = {
         hostname: BASE_URL_API,
         path: uri,
@@ -64,7 +64,7 @@ exports.forecast = async function (req, res) {
 
 exports.location = async function (req, res) {
     let city = await getCity();
-    res.send(city);
+    res.send({city});
 };
 
 // wrap a request in an promise

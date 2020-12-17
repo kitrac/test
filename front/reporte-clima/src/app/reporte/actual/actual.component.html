@@ -1,0 +1,12 @@
+<div class="jumbotron" *ngIf="climaActual">
+  <h3 class="display-4 text-center">{{climaActual.name + ' ,' + climaActual.sys.country}}</h3>
+  <h1 class="text-center">{{climaActual.main.temp}} °C</h1>
+  <div class="text-center">
+    <span>Humedad: {{climaActual.main.humidity}}%</span>
+    <span class="ml-1">Presion: {{climaActual.main.pressure}} mbar</span>
+    <span class="ml-1">Sensacion termica: {{climaActual.main.feels_like}} °C</span>
+    <br>
+    <span class="ml-1">Temp min: {{climaActual.main.temp_min}} °C</span>
+    <span class="ml-1">Temp max: {{climaActual.main.temp_max}} °C</span>
+  </div>
+</div>

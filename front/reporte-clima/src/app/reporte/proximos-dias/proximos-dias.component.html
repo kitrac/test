@@ -1,0 +1,39 @@
+<div class="row text-center pointer">
+  <div class="col-2" (click)="verDetalle(proximo)" *ngFor="let proximo of proximos">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">{{proximo.dt_txt | date}}</div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">{{proximo.main.temp}} °C</h5>
+        <div class="text-center">
+          <span>Humedad: {{proximo.main.humidity}}%</span>
+          <span class="ml-1">Presion: {{proximo.main.pressure}} mbar</span>
+          <span class="ml-1">Sensacion termica: {{proximo.main.feels_like}} °C</span>
+          <br>
+          <span class="ml-1">Temp min: {{proximo.main.temp_min}} °C</span>
+          <span class="ml-1">Temp max: {{proximo.main.temp_max}} °C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="detalles.length > 0">
+  <div class="col-12">
+    <h4>Detalle seleccion {{detalles[0].dt_txt | date}}</h4>
+  </div>
+  <div class="col-2 text-center" *ngFor="let detalle of detalles">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">{{detalle.dt_txt | date:'shortTime'}}</div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">{{detalle.main.temp}} °C</h5>
+        <div class="text-center">
+          <span>Humedad: {{detalle.main.humidity}}%</span>
+          <span class="ml-1">Presion: {{detalle.main.pressure}} mbar</span>
+          <span class="ml-1">Sensacion termica: {{detalle.main.feels_like}} °C</span>
+          <br>
+          <span class="ml-1">Temp min: {{detalle.main.temp_min}} °C</span>
+          <span class="ml-1">Temp max: {{detalle.main.temp_max}} °C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

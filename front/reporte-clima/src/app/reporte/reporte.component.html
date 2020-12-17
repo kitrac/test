@@ -1,0 +1,15 @@
+<div *ngIf="city && ciudades">
+  <div class="row">
+    <div class="col-6 text-right">
+      <h5>Seleccione ciudad</h5>
+    </div>
+    <div class="col-6">
+      <select (change)="setCity()" [(ngModel)]="city" class="form-control w-50" id="exampleFormControlSelect1">
+        <option *ngFor="let ciudad of ciudades" [value]="ciudad.name">{{ciudad.name}}</option>
+      </select>
+    </div>
+  </div>
+  <app-actual></app-actual>
+  <app-proximos-dias></app-proximos-dias>
+</div>
+
